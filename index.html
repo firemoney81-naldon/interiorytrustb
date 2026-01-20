@@ -1,23 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+  <style>
+    body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.8; margin: 0; padding: 0; color: #333; background-color: #f8f9fa; }
+    header { background-color: #eaf4f7; padding: 60px 20px; text-align: center; color: #2c3e50; border-bottom: 5px solid #00a6cf; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; color: #00a6cf; }
+    header p { font-size: 1.2em; color: #555; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); margin-bottom: 20px; }
+    section h2 { font-size: 2em; color: #00a6cf; border-bottom: 3px solid #eaf4f7; padding-bottom: 10px; margin-top: 0; }
+    section h3 { font-size: 1.5em; color: #333; margin-top: 30px; }
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 30px;
+      background-color: #00a6cf;
+      color: #fff;
+      font-size: 1.1em;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 25px;
+      transition: background 0.3s ease, transform 0.2s;
+      font-weight: bold;
+    }
+    .cta-btn:hover { background-color: #007bb6; transform: translateY(-2px); }
+    ul, ol { padding-left: 25px; margin-bottom: 20px; }
+    li { margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #f9f9f9; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+    th { background-color: #eaf4f7; color: #333; font-weight: bold; }
+    blockquote { font-style: italic; border-left: 5px solid #00a6cf; margin: 20px 0; padding-left: 20px; background-color: #fdfdfd; }
+    .content-box { border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-top: 20px; background-color: #ffffff; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+    .form-group input, .form-group select, .form-group textarea { width: calc(100% - 22px); padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
+    .form-group button { background-color: #28a745; color: white; border: none; padding: 15px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease; }
+    .form-group button:hover { background-color: #218838; }
+    .graph-container { margin: 20px 0; text-align: center; }
+    .graph-container img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    footer { background-color: #333; color: #fff; text-align: center; padding: 30px 20px; font-size: 0.9em; margin-top: 30px; }
+    .anchor-links { margin-bottom: 20px; background-color: #f1f1f1; padding: 15px; border-radius: 8px; }
+    .anchor-links a { display: block; margin-bottom: 8px; color: #007bff; text-decoration: none; font-size: 1.1em; }
+  </style>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "32평 인테리어 전문 컨설팅",
+    "url": "https://example.com/32pyeong-interior",
+    "logo": "https://example.com/logo-interior.png",
+    "description": "2026년 최신 32평 인테리어 가이드. 비용 분석, 시공 순서, 트렌드, 저렴한곳 찾기 노하우 제공.",
+    "telephone": "010-0000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "대한민국",
+      "addressRegion": "전국",
+      "postalCode": "00000",
+      "streetAddress": "온라인 컨설팅 전문"
+    },
+    "areaServed": ["전국"],
+    "serviceType": ["32평 인테리어", "아파트 리모델링", "주거 인테리어 컨설팅"]
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>32평 인테리어 비용, 견적, 기간: 2026년 전문가 가이드라인</h1>
+    <p>32평 아파트 인테리어를 위한 모든 것. 합리적인 예산 책정부터 성공적인 시공까지.</p>
+    <a href="#estimate_form" class="cta-btn">인테리어 견적 계산기 바로가기</a>
+  </header>
+
+  <section id="table_of_contents">
+    <h2>목차</h2>
+    <div class="anchor-links">
+      <a href="#cost_analysis">1. 2026년 32평 인테리어 평균 비용 분석</a>
+      <a href="#factors_affecting_cost">2. 견적 금액을 결정하는 5가지 핵심 요소</a>
+      <a href="#process_guide">3. 성공적인 32평 리모델링 진행 절차</a>
+      <a href="#trends">4. 2026년 최신 32평 인테리어 트렌드 분석</a>
+      <a href="#choosing_company">5. 인테리어 업체 선정 노하우: 내돈내산 후기 활용법</a>
+      <a href="#regional_costs">6. 전국 지역별 32평 인테리어 비용 차이점</a>
+    </div>
+  </section>
+
+  <section id="cost_analysis">
+    <h2>1. 2026년 32평 인테리어 평균 비용 분석: 얼마가 적당할까?</h2>
+    <p>32평 아파트는 우리나라에서 가장 흔한 주택 크기 중 하나로, 인테리어 수요가 높습니다. 2026년 현재 인플레이션과 원자재 가격 상승으로 인해 인테리어 평균 비용이 전년 대비 소폭 증가했습니다. 32평 인테리어 비용은 '부분 인테리어'와 '전체 인테리어(올수리)'로 크게 나뉩니다. 일반적으로 32평 아파트 전체 올수리(주방, 화장실 2개 포함)를 기준으로 했을 때, <strong>2,500만원부터 5,000만원 이상</strong>까지 예상 금액 범위가 매우 넓습니다.</p>
+
+    <h3>1.1. 32평 전체 인테리어(올수리) 예상 견적표 (2026년 기준)</h3>
+    <p>아래 표는 32평 아파트의 전체 인테리어 시공 항목별 평균 비용을 '저렴한곳', '표준', '고급' 세 가지 등급으로 나누어 비교한 자료입니다. 이 금액은 시공 범위, 자재 등급, 철거 유무에 따라 크게 변동될 수 있습니다.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>시공 항목</th>
+          <th>저렴한곳 (실속형)</th>
+          <th>표준 (가성비형)</th>
+          <th>고급 (프리미엄형)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>도배/벽지</td>
+          <td>150만원 ~ 200만원</td>
+          <td>200만원 ~ 300만원</td>
+          <td>300만원 ~ 400만원</td>
+        </tr>
+        <tr>
+          <td>바닥재 (마루/장판)</td>
+          <td>200만원 ~ 250만원 (장판)</td>
+          <td>250만원 ~ 350만원 (강마루)</td>
+          <td>350만원 ~ 500만원 (원목마루)</td>
+        </tr>
+        <tr>
+          <td>화장실 2개</td>
+          <td>500만원 ~ 700만원 (기본형)</td>
+          <td>700만원 ~ 1,000만원 (고급 타일)</td>
+          <td>1,000만원 이상 (수입 자재)</td>
+        </tr>
+        <tr>
+          <td>주방/싱크대</td>
+          <td>300만원 ~ 400만원 (PET/UV)</td>
+          <td>400만원 ~ 600만원 (LPM/도장)</td>
+          <td>600만원 ~ 1,000만원 이상 (수입/천연대리석)</td>
+        </tr>
+        <tr>
+          <td>샤시/창호</td>
+          <td>700만원 ~ 1,000만원 (국산 기본)</td>
+          <td>1,000만원 ~ 1,500만원 (단열강화)</td>
+          <td>1,500만원 이상 (수입/시스템창호)</td>
+        </tr>
+        <tr>
+          <td>전기/조명</td>
+          <td>100만원 ~ 150만원</td>
+          <td>150만원 ~ 250만원</td>
+          <td>250만원 ~ 400만원</td>
+        </tr>
+        <tr>
+          <td>목공/몰딩/문</td>
+          <td>300만원 ~ 400만원</td>
+          <td>400만원 ~ 600만원</td>
+          <td>600만원 이상</td>
+        </tr>
+        <tr>
+          <td><strong>총 합계 예상 금액</strong></td>
+          <td><strong>약 2,500만원 ~ 3,500만원</strong></td>
+          <td><strong>약 3,500만원 ~ 5,000만원</strong></td>
+          <td><strong>약 5,000만원 이상</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>1.2. 32평 인테리어 평당 가격과 숨겨진 비용</h3>
+    <p>흔히 인테리어 견적을 평당 가격으로 계산합니다. 32평 인테리어의 평당 가격은 80만원부터 150만원까지 다양하며, 이는 앞서 언급한 '저렴한곳'과 '고급'의 차이입니다. 하지만 평당 가격만으로 비교하면 안 되는 이유가 있습니다.</p>
+    <ul>
+      <li><strong>포함 항목 차이:</strong> A업체가 평당 100만원이라고 해도, 샤시 교체가 포함되지 않은 경우가 많습니다. 샤시를 포함할 경우 평당 가격이 급격히 올라가므로, 세부 항목을 반드시 확인해야 합니다.</li>
+      <li><strong>노후도에 따른 차이:</strong> 구축 아파트(20년 이상)는 철거 비용, 설비 배관 교체 비용 등이 추가됩니다. 신축 아파트 인테리어와 비교할 때 500만원 이상 추가 지출이 발생할 수 있습니다.</li>
+      <li><strong>확장 공사:</strong> 발코니 확장 공사 시 단열 및 난방 배관 작업이 추가되어 비용이 증가하며, 이는 전체 인테리어의 10~20%를 차지합니다.</li>
+    </ul>
+
+    <h3>1.3. 인테리어 비용 절감 팁: 싼곳과 저렴한곳의 차이</h3>
+    <p>무조건 '싼곳'을 찾기보다 '저렴한곳'을 찾는 것이 중요합니다. '싼곳'은 저가 자재를 사용하거나 필수 공정을 누락하여 추후 하자가 발생할 위험이 높습니다. 반면 '저렴한곳'은 불필요한 마진을 줄이고 고객의 예산에 맞춰 시공 범위를 합리적으로 조율해주는 곳입니다.</p>
+    <div class="content-box">
+      <h4>비용 절감 핵심 전략: '선택과 집중'</h4>
+      <p>가장 효과적인 비용 절감 방법은 '선택과 집중'입니다. 모든 것을 최고급으로 할 수 없다면, 가족이 가장 오래 머무르는 공간(예: 주방, 거실)에 예산을 집중하고, 상대적으로 덜 중요한 공간(예: 작은방)은 실속형 자재를 선택합니다. 또한, 기존에 사용하던 가구 중 재활용이 가능한 품목(예: 붙박이장)은 그대로 유지하는 것도 좋은 방법입니다.</p>
+    </div>
+  </section>
+
+  <section id="factors_affecting_cost">
+    <h2>2. 견적 금액을 결정하는 5가지 핵심 요소: 장단점 비교</h2>
+    <p>32평 인테리어 비용은 단순히 평당 가격으로 계산할 수 없습니다. 시공의 난이도와 디테일에 따라 가격이 천차만별입니다. 특히 다음 5가지 요소가 전체 예산을 좌우합니다.</p>
+
+    <h3>2.1. 인테리어 자재 등급: 가성비와 프리미엄의 차이점</h3>
+    <p>자재의 등급은 인테리어 견적의 50% 이상을 차지합니다. 예를 들어, 바닥재는 P-타일, 장판, 강마루, 원목마루 순으로 가격이 비싸집니다. 특히 주방의 경우, 인조대리석과 엔지니어드 스톤은 가격 차이가 크지만, 내구성과 디자인 면에서 '장단점'이 뚜렷합니다. 예산을 절약하고 싶다면 가성비 좋은 국산 브랜드의 '평균' 등급 자재를 활용하고, 만족도를 높이려면 수입 자재나 친환경 자재를 고려해야 합니다.</p>
+
+    <h3>2.2. 인테리어 업체 유형: 개인 디자이너 vs. 종합 인테리어 회사</h3>
+    <p>업체 유형에 따라 비용 구조가 다릅니다. 종합 인테리어 회사는 체계적인 관리와 안정적인 AS를 제공하지만, 중간 마진이 발생합니다. 반면 개인 디자이너나 소규모 팀은 합리적인 '저렴한곳'을 찾을 수 있지만, AS나 시공 중 변수가 발생할 위험이 있습니다. '내돈내산 후기'를 꼼꼼히 확인하여 업체의 전문성과 신뢰도를 판단해야 합니다.</p>
+
+    <h3>2.3. 시공 범위: 전체 vs. 부분 인테리어의 장단점</h3>
+    <p>부분 인테리어는 도배, 장판, 조명 등 필수적인 항목만 교체하는 것입니다. 전체 인테리어는 철거부터 샤시, 주방, 화장실까지 모두 교체합니다. 부분 인테리어의 '장점'은 저렴한 비용으로 빠르게 진행 가능하다는 것이고, '단점'은 일관된 디자인을 구현하기 어렵다는 것입니다. 전체 인테리어의 '장점'은 원하는 디자인을 완벽하게 구현하고 단열 등 기능적인 면을 강화할 수 있다는 것이고, '단점'은 높은 비용과 긴 시공 기간입니다.</p>
+
+    <h3>2.4. 아파트 연식과 상태: 구축과 신축의 차이점</h3>
+    <p>아파트의 연식은 견적에 큰 영향을 미칩니다. 15년 이상 된 구축 아파트는 누수 방지 공사, 배관 교체, 단열 보강 등 추가적인 공사가 필요할 수 있습니다. 30년 이상 된 아파트는 철거 비용과 구조 보강이 더해져 신축 아파트 인테리어보다 1.5배 이상의 비용이 발생할 수 있습니다.</p>
+
+    <h3>2.5. 서비스 범위 및 AS 기간</h3>
+    <p>견적에 포함된 AS 기간을 확인해야 합니다. '저렴한곳' 중 일부는 AS를 제공하지 않거나 기간이 매우 짧습니다. 법적으로는 건설산업기본법에 따라 1년의 하자 보수 기간이 보장되지만, 계약서에 명시된 AS 기간을 확인하여 추후 분쟁을 예방해야 합니다.</p>
+  </section>
+
+  <section id="process_guide">
+    <h2>3. 성공적인 32평 리모델링 진행 절차와 주의사항</h2>
+    <p>인테리어는 단순히 시공으로 끝나는 것이 아니라, 체계적인 준비 과정이 필요합니다. 2026년 기준, 인테리어 시공을 위한 표준 절차는 다음과 같습니다.</p>
+
+    <h3>3.1. 인테리어 준비 단계</h3>
+    <ol>
+      <li><strong>예산 책정 및 시공 범위 확정:</strong> 가용 예산을 확정하고, 전체 인테리어와 부분 인테리어 중 어떤 것을 할지 결정합니다.</li>
+      <li><strong>정보 탐색 및 컨셉 구상:</strong> '내돈내산 후기'를 통해 레퍼런스를 수집하고, 원하는 디자인 컨셉(미니멀리즘, 모던 클래식 등)을 정합니다.</li>
+      <li><strong>업체 선정:</strong> 최소 3곳 이상의 업체에 견적을 의뢰하고, 포트폴리오와 AS 조건 등을 비교합니다.</li>
+    </ol>
+
+    <h3>3.2. 시공 진행 단계</h3>
+    <ol>
+      <li><strong>철거 및 폐기물 처리:</strong> 기존의 마감재와 시설을 철거하고 폐기물을 처리합니다.</li>
+      <li><strong>설비 및 목공 작업:</strong> 화장실 방수, 배관 작업, 목공 틀 작업, 단열 작업 등을 진행합니다.</li>
+      <li><strong>도배, 바닥재, 타일 시공:</strong> 마감재 시공이 진행됩니다. 도배와 바닥 시공 순서가 중요하며, 전문가의 조언을 따라야 합니다.</li>
+      <li><strong>가구 및 조명 설치:</strong> 싱크대, 붙박이장, 조명 등을 설치하고 디테일을 마무리합니다.</li>
+    </ol>
+
+    <h3>3.3. 인테리어 계약 시 주의사항 (체류시간 증가 유도)</h3>
+    <div class="content-box">
+      <h4>체크리스트: 계약서 작성 전 필수 확인 항목</h4>
+      <p>인테리어 계약은 분쟁이 많은 분야이므로, 꼼꼼하게 확인해야 합니다. 다음 체크리스트를 활용하여 계약서를 검토하십시오.</p>
+      <form id="contract_checklist">
+        <div class="form-group">
+          <label><input type="checkbox"> 견적서에 모든 항목이 상세히 기재되어 있는지 확인 (일명 '깜깜이 견적' 방지)</label>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox"> 시공 기간, 시작일, 종료일이 명확하게 명시되어 있는지 확인</label>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox"> 자재 등급(제품명, 제조사)이 구체적으로 적혀 있는지 확인</label>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox"> AS 기간 및 범위가 명시되어 있는지 확인</label>
+        </div>
+        <div class="form-group">
+          <label><input type="checkbox"> 하자 발생 시 배상 책임 소재가 명확한지 확인</label>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="trends">
+    <h2>4. 2026년 최신 32평 인테리어 트렌드 분석: 디자인과 기능</h2>
+    <p>32평 인테리어는 공간 효율성을 극대화하는 방향으로 진화하고 있습니다. 2026년의 주요 트렌드는 다음과 같습니다.</p>
+
+    <h3>4.1. 미니멀리즘과 '플렉시블' 공간</h3>
+    <p>단순하고 깨끗한 미니멀리즘 인테리어가 여전히 강세입니다. 특히 32평은 공간을 넓어 보이게 하는 미니멀 디자인이 선호됩니다. 2026년에는 '플렉시블' 공간이 대두됩니다. 가변형 벽체나 무빙월을 활용하여 거실과 서재, 다이닝 공간을 필요에 따라 분리하거나 통합하는 형태입니다.</p>
+
+    <h3>4.2. 스마트 홈 시스템의 보편화</h3>
+    <p>조명, 온도 제어, 보안 시스템 등 스마트 홈 기술이 32평 인테리어에 필수로 자리 잡았습니다. 인테리어 시공 단계에서부터 스마트 시스템 배선을 고려하여 더욱 깔끔하고 효율적인 공간을 만듭니다.</p>
+
+    <h3>4.3. 친환경 자재와 지속 가능성</h3>
+    <p>ESG 경영의 확산과 함께 친환경 자재에 대한 관심이 높아졌습니다. VOCs(휘발성 유기화합물)가 적은 벽지, 페인트, E0 등급 이상의 목재를 사용하는 것이 일반적이며, 이는 거주자의 건강과도 직결됩니다.</p>
+  </section>
+
+  <section id="choosing_company">
+    <h2>5. 인테리어 업체 선정 노하우: 내돈내산 후기와 순위 활용법</h2>
+    <p>실패 없는 32평 인테리어를 위해서는 신뢰할 수 있는 업체를 찾는 것이 핵심입니다. '내돈내산 후기'를 꼼꼼히 살피는 것이 중요합니다.</p>
+
+    <h3>5.1. 업체 순위와 포트폴리오 확인</h3>
+    <p>단순히 '인테리어 순위'만을 보고 업체를 선정하는 것은 위험합니다. A업체가 B업체보다 '저렴한곳'일 수 있지만, 포트폴리오를 통해 시공의 디테일을 확인해야 합니다. 32평 시공 경험이 많은지, 우리 아파트와 비슷한 구조의 레퍼런스가 있는지 확인하는 것이 중요합니다.</p>
+
+    <h3>5.2. '내돈내산 후기' 검증 방법</h3>
+    <p>블로그나 카페의 '내돈내산 후기'는 중요한 정보원입니다. 하지만 허위 후기도 많기 때문에 주의해야 합니다.</p>
+    <ul>
+      <li><strong>사진 디테일:</strong> 시공 전후 사진뿐만 아니라 시공 중 사진이 있는지 확인합니다.</li>
+      <li><strong>시공 과정 설명:</strong> 시공 과정에서 발생한 문제점과 해결 과정을 구체적으로 서술하는 후기가 신뢰성이 높습니다.</li>
+      <li><strong>장단점 균형:</strong> 칭찬 일색의 후기보다는 장점과 함께 아쉬운 점(단점)을 솔직하게 언급한 후기가 진짜 '내돈내산'일 확률이 높습니다.</li>
+    </ul>
+
+    <h3>5.3. 32평 인테리어 전문가 추천 요청</h3>
+    <p>인테리어 플랫폼이나 커뮤니티에서 전문가를 추천받는 것도 좋은 방법입니다. 32평 인테리어에 대한 전문적인 지식을 갖춘 전문가와 상담하여 예산을 조율하는 것이 중요합니다.</p>
+  </section>
+
+  <section id="regional_costs">
+    <h2>6. 전국 지역별 32평 인테리어 비용 차이점: 서울, 부산, 대전 등</h2>
+    <p>인테리어 비용은 지역별 인건비와 자재 유통 마진에 따라 차이가 발생합니다. 특히 서울, 부산, 대전, 광주 등 대도시 지역과 지방 소도시 간의 가격 차이가 10~20%가량 발생할 수 있습니다.</p>
+
+    <h3>6.1. 전국 주요 지역별 32평 인테리어 키워드 분석</h3>
+    <p>전국 주요 도시별 32평 인테리어 관련 키워드는 다음과 같습니다. 해당 지역에서 '저렴한곳'을 찾고자 할 때 활용할 수 있습니다. (2026년 기준)</p>
+    <ul>
+      <li><strong>서울 32평 인테리어:</strong> 강남, 서초, 송파, 강동구 32평 인테리어, 서울 32평 리모델링 잘하는곳, 서울 32평 인테리어 비용 평균</li>
+      <li><strong>경기 32평 인테리어:</strong> 분당, 판교 32평 인테리어, 일산, 파주 32평 리모델링, 수원, 용인 32평 인테리어 싼곳, 동탄, 광교 32평 인테리어 추천</li>
+      <li><strong>인천 32평 인테리어:</strong> 청라, 송도 32평 인테리어, 인천 32평 리모델링 비용, 인천 32평 인테리어 저렴한곳</li>
+      <li><strong>대전 32평 인테리어:</strong> 세종, 대전 유성구, 서구 32평 인테리어, 대전 32평 리모델링 업체 순위</li>
+      <li><strong>부산 32평 인테리어:</strong> 해운대, 센텀시티 32평 인테리어, 부산 32평 리모델링 비용, 부산 32평 인테리어 추천</li>
+      <li><strong>대구 32평 인테리어:</strong> 수성구, 달서구 32평 인테리어, 대구 32평 리모델링 전문</li>
+      <li><strong>울산 32평 인테리어:</strong> 울산 32평 아파트 인테리어, 울산 32평 리모델링 비용</li>
+      <li><strong>광주 32평 인테리어:</strong> 광주 32평 아파트 리모델링, 광주 32평 인테리어 저렴한곳</li>
+      <li><strong>기타 지역:</strong> 제주 32평 인테리어, 창원, 김해 32평 인테리어, 천안, 아산 32평 리모델링, 청주 32평 인테리어 업체 순위, 전주, 익산 32평 인테리어 비용</li>
+    </ul>
+    <p>지역별 인테리어 시공사례를 확인하여 해당 지역의 '평균' 시세를 파악하는 것이 중요합니다.</p>
+  </section>
+
+  <section id="estimate_form">
+    <h2>32평 인테리어 무료 예상 견적 시뮬레이터</h2>
+    <p>간단한 정보 입력으로 32평 인테리어의 예상 금액을 산출해보세요. 정확한 견적은 방문 상담 후 확정됩니다.</p>
+    <div class="content-box">
+      <form id="interior_calculator">
+        <div class="form-group">
+          <label for="apartment_size">아파트 평수 (32평 기준)</label>
+          <input type="number" id="apartment_size" name="apartment_size" value="32" readonly>
+        </div>
+        <div class="form-group">
+          <label for="apartment_age">아파트 건축 연식 (선택)</label>
+          <select id="apartment_age" name="apartment_age">
+            <option value="5">5년 미만 (신축)</option>
+            <option value="10">5년 ~ 10년 (준신축)</option>
+            <option value="15">10년 ~ 15년 (구축)</option>
+            <option value="20">15년 이상 (구축)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="remodeling_type">시공 범위 (선택)</label>
+          <select id="remodeling_type" name="remodeling_type">
+            <option value="full">전체 올수리 (주방, 화장실 포함)</option>
+            <option value="partial">부분 인테리어 (도배, 바닥, 조명만)</option>
+            <option value="minimal">최소형 인테리어 (셀프 인테리어 지원)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="desired_budget">예상 희망 예산 범위 (단위: 만원)</label>
+          <input type="number" id="desired_budget" name="desired_budget" placeholder="예: 3000">
+        </div>
+        <div class="form-group">
+          <button type="button" onclick="calculateEstimate()">예상 견적 확인하기</button>
+        </div>
+        <p id="estimate_result"></p>
+      </form>
+      <script>
+        function calculateEstimate() {
+          const size = parseInt(document.getElementById('apartment_size').value);
+          const age = document.getElementById('apartment_age').value;
+          const type = document.getElementById('remodeling_type').value;
+          const budget = parseInt(document.getElementById('desired_budget').value);
+          let baseCost = 0;
+
+          if (type === 'full') {
+            baseCost = size * 120; // 32평 표준 평당 120만원 기준
+          } else if (type === 'partial') {
+            baseCost = size * 50; // 부분 인테리어 기준
+          } else {
+            baseCost = size * 30; // 최소형 기준
+          }
+
+          if (age === '20') {
+            baseCost += 500; // 구축 보강 비용 추가
+          }
+
+          document.getElementById('estimate_result').innerHTML = `<strong>예상 견적 금액: ${baseCost.toLocaleString()}만원</strong> (±20% 변동 가능)`;
+        }
+      </script>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <h3>Q. 32평 인테리어 기간은 얼마나 걸리나요?</h3>
+    <p>A. 전체 올수리를 기준으로 할 경우, 3주에서 4주(20일~30일) 정도가 일반적입니다. 확장 공사나 주방 구조 변경이 포함될 경우 기간이 늘어날 수 있습니다. 부분 인테리어는 1~2주 내로 완료됩니다.</p>
+
+    <h3>Q. 인테리어 시공 중 이사는 어떻게 하나요?</h3>
+    <p>A. 대부분의 경우 시공 기간 동안 이사를 나간 후 공사 완료 후 입주합니다. 보관이사를 이용하거나, 친지 집에서 머물며 진행하는 것이 일반적입니다.</p>
+
+    <h3>Q. '저렴한곳'에서 공사하면 하자가 많이 발생하나요?</h3>
+    <p>A. 무조건 그런 것은 아니지만, 자재 등급을 낮추거나 필수 공정을 생략하는 경우가 있습니다. 견적서를 꼼꼼히 확인하고, '내돈내산 후기'를 통해 업체 신뢰도를 확인하는 것이 중요합니다.</p>
+  </section>
+
+  <section id="external_links">
+    <h2>신뢰성 있는 외부 사이트 참고 자료</h2>
+    <ul>
+      <li><a href="https://www.kosis.kr/index/index.do" target="_blank">통계청 KOSIS: 주택 관련 통계 자료 (아파트 면적 및 노후도 통계)</a></li>
+      <li><a href="https://namu.wiki/w/%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4" target="_blank">나무위키: 인테리어 관련 정보 및 개념 정리</a></li>
+      <li><a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=186217&efYd=20160811#0000" target="_blank">국가법령정보센터: 공동주택관리법 (하자 보수 관련 법률)</a></li>
+      <li><a href="https://consumer.go.kr/" target="_blank">한국소비자원: 인테리어 분쟁 해결 기준 및 소비자 피해 예방 정보</a></li>
+      <li><a href="https://www.lh.or.kr/" target="_blank">한국토지주택공사(LH): 주거환경 개선 및 리모델링 지원 정보</a></li>
+    </ul>
+  </section>
+
+  <section id="contact_us">
+    <h2>32평 인테리어 전문가 무료 상담 요청</h2>
+    <p>더 궁금한 점이 있으시면 언제든지 문의해 주세요. 전문 컨설턴트가 친절하게 답변해 드립니다.</p>
+    <div class="content-box">
+      <form>
+        <div class="form-group">
+          <label for="name">이름:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="address">시공 희망 주소:</label>
+          <input type="text" id="address" name="address" placeholder="예: 대전 유성구 복용동 아파트" required>
+        </div>
+        <div class="form-group">
+          <label for="message">문의 내용 (구체적인 희망 사항)</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">상담 요청하기</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  
